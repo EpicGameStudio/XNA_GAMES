@@ -42,12 +42,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\Animation.cs" />
+    <Compile Include="Animations\IAnimation.cs" />
+    <Compile Include="Components\Animator.cs" />
+    <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\GameObject.cs" />
+    <Compile Include="Components\SpriteRenderer.cs" />
+    <Compile Include="Components\Transform.cs" />
     <Compile Include="MainGame.cs" />
+    <Compile Include="Objects\NPC.cs" />
+    <Compile Include="Objects\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\Content.mgcb" />
+    <None Include="Content\Fonts\NotFoundFont.xnb" />
+    <None Include="Content\Fonts\PokemonBattleFont.xnb" />
+    <None Include="Content\Fonts\PokemonFont.xnb" />
+    <None Include="Content\Textures\Battle\Backgrounds\background.xnb" />
+    <None Include="Content\Textures\Battle\Gui\BattleNumberOfPokemons.xnb" />
+    <None Include="Content\Textures\Battle\Gui\FemaleIcon.xnb" />
+    <None Include="Content\Textures\Battle\Gui\HealthBar.xnb" />
+    <None Include="Content\Textures\Battle\Gui\MaleIcon.xnb" />
+    <None Include="Content\Textures\Battle\Gui\PlayerStatusBox.xnb" />
+    <None Include="Content\Textures\Battle\Gui\StatusPokemonBallDead.xnb" />
+    <None Include="Content\Textures\Battle\Gui\StatusPokemonBallNormal.xnb" />
+    <None Include="Content\Textures\Battle\Gui\StatusPokemonBallStatusEffect.xnb" />
+    <None Include="Content\Textures\Battle\Pokeballs\pokeball_open_effect.xnb" />
+    <None Include="Content\Textures\Battle\Pokeballs\pokeball_regular.xnb" />
+    <None Include="Content\Textures\Emotions\trainer_b.xnb" />
+    <None Include="Content\Textures\NotfoundTexture.xnb" />
+    <None Include="Content\Textures\NPC\main_character.xnb" />
+    <None Include="Content\Textures\NPC\main_character_single.xnb" />
+    <None Include="Content\Textures\NPC\rock_trainer.xnb" />
+    <None Include="Content\Textures\pi_test.xnb" />
+    <None Include="Content\Textures\Pokemons\charmander.xnb" />
+    <None Include="Content\Textures\Pokemons\weedle_front.xnb" />
+    <None Include="Content\Textures\ScreenEffects\white_block.xnb" />
+    <None Include="Content\Textures\Tiles\main_tile.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Textures\Trainers\bug_catcher.xnb" />
+    <None Include="Content\Textures\Trainers\trainer_back.xnb" />
+    <None Include="Content\Textures\Trainers\trainer_back_single.xnb" />
+    <None Include="Content\Textures\Windows\message_arrow.xnb" />
+    <None Include="Content\Textures\Windows\windowBattleFrame.xnb" />
+    <None Include="Content\Textures\Windows\windowframe.xnb" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\git\MonoGame\MonoGame.Framework\MonoGame.Framework.Windows.csproj">
@@ -55,8 +97,6 @@
       <Name>MonoGame.Framework.Windows</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

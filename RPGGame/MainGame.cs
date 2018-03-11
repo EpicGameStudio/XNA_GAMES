@@ -33,7 +33,7 @@ namespace RPGGame
         protected override void LoadContent()
         {
             base.LoadContent();
-            
+            //pic = Content.Load<Texture2D>(@"Textures\Tiles\main_tile");
         }
         protected override void Update(GameTime gameTime)
         {
@@ -43,7 +43,7 @@ namespace RPGGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            //spriteBatch.Draw(pic, new Vector2(), Color.Transparent);
+            spriteBatch.Draw(pic, new Vector2(), Color.Transparent);
             spriteBatch.End();
             base.Draw(gameTime);
         }
