@@ -1,0 +1,2 @@
+﻿github:
+https://github.com/MilleBo/SpeedCodingPokemon
