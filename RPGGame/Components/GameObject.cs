@@ -24,6 +24,11 @@ namespace RPGGame.Components
         private List<Component> components = new List<Component>();
         public List<Component> Components { get { return components; } }
 
+        public Component GetComponent<T>() where T:Component
+        {
+            return components.Where(i => i is T).FirstOrDefault();
+        }
+
         public void AddComponent(Component component)
         {
             if (object.Equals(components, null))

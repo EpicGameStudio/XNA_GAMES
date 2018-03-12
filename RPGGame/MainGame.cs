@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Helper;
+using RPGGame.Scenes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace RPGGame
         private GraphicsDeviceManager graphicsDeviceManager;
         SpriteBatch spriteBatch;
         Texture2D pic;
+        ContentLoader contentLoader;
         public MainGame()
         {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
@@ -22,6 +25,7 @@ namespace RPGGame
         protected override void Initialize()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            contentLoader = new ContentLoader(Content);
             graphicsDeviceManager.IsFullScreen = true;
             IsMouseVisible = true;
             base.Initialize();
@@ -33,17 +37,20 @@ namespace RPGGame
         protected override void LoadContent()
         {
             base.LoadContent();
+
+            SceneManager.Instance.LoadScene("WorldScene", contentLoader);
             //pic = Content.Load<Texture2D>(@"Textures\Tiles\main_tile");
         }
         protected override void Update(GameTime gameTime)
         {
+            SceneManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            spriteBatch.Draw(pic, new Vector2(), Color.Transparent);
+            SceneManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
