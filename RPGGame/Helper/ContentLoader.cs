@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Scenes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,6 +62,13 @@ namespace RPGGame.Helper
                 }
             }
             return fontByName[fontName];
+        }
+
+        public MapData LoadMap(string id)
+        {
+            MapData mapData = new MapData();
+            throw new NotImplementedException();
+            return mapData;
         }
     }
 }

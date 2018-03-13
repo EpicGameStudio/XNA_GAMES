@@ -21,7 +21,13 @@ namespace RPGGame.Components
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Vector2.Zero, Color.White);
+            var transform = ComponentOwner.GetComponent<Transform>();
+            var position = transform.Position + ComponentOwner.ParentPosition;
+            spriteBatch.Draw(
+                Sprite,
+                position,
+                Color.White
+                );
             base.Draw(spriteBatch);
         }
 

@@ -25,8 +25,10 @@ namespace RPGGame.Scenes
         public override void Load(ContentLoader contentLoader)
         {
             //load map here, it should load current map and the around maps
-            var map = new Map(0,contentLoader);
+            var map = new Map(contentLoader.LoadMap("0"), contentLoader);
+            var map1 = new Map(contentLoader.LoadMap("1"), contentLoader);
             mapList.Add(map);
+            mapList.Add(map1);
         }
 
         public override void UnLoad()

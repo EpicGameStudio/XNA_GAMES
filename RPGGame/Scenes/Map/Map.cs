@@ -11,16 +11,31 @@ using System.Threading.Tasks;
 
 namespace RPGGame.Scenes
 {
-    public class Map
+    public class Map:IPosition
     {
         private int id;
         private string name;
         private ContentLoader contentLoader;
-        private List<GameObject> mapItems;
 
-        public Map(int pId, ContentLoader contentLoader)
+        MapData mapData;
+        private List<GameObject> mapItems;
+        private Rectangle boundary;
+        
+        public Vector2 Position
         {
-            id = pId;
+            get
+            {
+                return mapData.Position;
+            }
+            set
+            {
+                mapData.Position = value;
+            }
+        }
+
+        public Map(MapData data, ContentLoader contentLoader)
+        {
+            mapData = data;
             this.contentLoader = contentLoader;
             mapItems = new List<GameObject>();
             LoadContent();
@@ -29,13 +44,17 @@ namespace RPGGame.Scenes
         public void LoadContent()
         {
             //init map items, include map base entity and event
-            //eg:
-            GameObject gameObject = new GameObject();
+            //eg: 
+            GameObject gameObject = new GameObject(this);
             SpriteRenderer sprite = new SpriteRenderer();
-            sprite.Sprite = contentLoader.LoadTexture("Tiles/main_tile");
-            
+            sprite.Sprite = contentLoader.LoadTexture("Tiles/main_tile");                
+                
             gameObject.AddComponent(sprite);
+            gameObject.AddComponent(new Transform());
             mapItems.Add(gameObject);
+            
+
+            
         }
 
         public void Save()

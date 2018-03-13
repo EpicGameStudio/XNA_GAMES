@@ -59,9 +59,11 @@
     <Compile Include="Scenes\BattleScene.cs" />
     <Compile Include="Scenes\IDraw.cs" />
     <Compile Include="Scenes\IndoorScene.cs" />
+    <Compile Include="Scenes\IPosition.cs" />
     <Compile Include="Scenes\IScene.cs" />
     <Compile Include="Scenes\IUpdate.cs" />
     <Compile Include="Scenes\Map\Map.cs" />
+    <Compile Include="Scenes\Map\MapData.cs" />
     <Compile Include="Scenes\SceneBase.cs" />
     <Compile Include="Scenes\SceneManager.cs" />
     <Compile Include="Scenes\StartScene.cs" />
