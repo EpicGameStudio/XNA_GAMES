@@ -47,14 +47,11 @@ namespace RPGGame.Scenes
             //eg: 
             GameObject gameObject = new GameObject(this);
             SpriteRenderer sprite = new SpriteRenderer();
-            sprite.Sprite = contentLoader.LoadTexture("Tiles/main_tile");                
+            sprite.Sprite = contentLoader.LoadTexture(@"Tiles\over_world_tiles1");                
                 
             gameObject.AddComponent(sprite);
             gameObject.AddComponent(new Transform());
             mapItems.Add(gameObject);
-            
-
-            
         }
 
         public void Save()

@@ -67,8 +67,15 @@ namespace RPGGame.Helper
         public MapData LoadMap(string id)
         {
             MapData mapData = new MapData();
-            throw new NotImplementedException();
+            
+            //contentManager.Load<StringReader>
             return mapData;
+        }
+
+        public Texture2D LoadImage(string fileName)
+        {
+            var texture = contentManager.Load<Texture2D>(Path.Combine("Textures", fileName));
+            return texture;
         }
     }
 }

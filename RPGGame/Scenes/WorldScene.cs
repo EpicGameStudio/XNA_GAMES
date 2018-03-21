@@ -17,6 +17,10 @@ namespace RPGGame.Scenes
 
         List<Map> mapList;
 
+        Map currentMap;
+        Map previousMap;
+
+
         public WorldScene()
         {
             mapList = new List<Map>();
@@ -29,6 +33,8 @@ namespace RPGGame.Scenes
             var map1 = new Map(contentLoader.LoadMap("1"), contentLoader);
             mapList.Add(map);
             mapList.Add(map1);
+            currentMap = map;
+            previousMap = currentMap;
         }
 
         public override void UnLoad()
@@ -36,8 +42,12 @@ namespace RPGGame.Scenes
             throw new NotImplementedException();
         }
 
+
+
         public override void Update(GameTime gameTime)
         {
+
+
             mapList.ForEach(map => { map.Update(gameTime); });
         }
 

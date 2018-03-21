@@ -26,7 +26,7 @@ namespace RPGGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             contentLoader = new ContentLoader(Content);
-            graphicsDeviceManager.IsFullScreen = true;
+            Window.AllowUserResizing = true;
             IsMouseVisible = true;
             base.Initialize();
         }
